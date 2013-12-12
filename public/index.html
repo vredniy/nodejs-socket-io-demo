@@ -1,0 +1,15 @@
+<style>
+  #random {
+    text-align: center;
+  }
+</style>
+
+<div id="random"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect(location.hostname);
+  socket.on('random', function (data) {
+    document.getElementById('random').innerText = data;
+  });
+</script>
